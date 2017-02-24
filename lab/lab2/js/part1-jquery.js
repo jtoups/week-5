@@ -169,5 +169,80 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
 // the function passed to `ready` until the HTML document is fully loaded and all scripts have
 // been interpreted. It is, therefore, an example of asynchronous behavior.
 $(document).ready(function() {
-  // Do your stuff here
+//TASK 1: Using javascript, change the HTML to create useful labels for our UI
+
+  $("h1").text("Form");
+  $("#text-label1").text("First Name");
+  $("#text-label2").text("Last Name");
+  $("#text-label3").text("Address");
+  $("#number-label").text("Age");
+  $("#checkbox-label1").text("Lives in Philly?");
+  $("#checkbox-label2").text("PA Resident?");
+  $("#color-label").text("Favorite Color?");
+  $("#latitude-label").text("Latitude");
+  $("#longitude-label").text("Longitude");
+  $("#place-label").text("Place description");
+  $("#color-label2").text("Place color");
+//for changing the labels/text outside the fields
+
+//TASK 2:   Task 2: Setting (writing) input values
+  $("h1").text("Form");
+  $("#text-input1").val("Jarred");
+  $("#text-input2").val("Toups");
+  $("#text-input3").val("4748 Pine");
+  $("#numeric-input").val("24");
+  $("#cbox-input1").prop("checked",true);
+  $("#cbox-input2").prop("checked",true); //Why does this console "undefined?"
+  $("#color-input").val("#6c6c6c");
+  $("#markerName").val("My Place");
+  $("#LATT").val("0"); //Why doesn't this one show up?
+  $("#LONG").val("0");
+  $("#markerColor").val("#ac4b52");
+  console.log(form);
+//changing the default value in teh fields
+
+
+//TASK 3: Getting (reading) input values
+var form = {}; //Why is this the case?
+  form.field1=$("#text-input1").val();
+  form.field2=$("#text-input2").val();
+  form.field3=$("#text-input3").val();
+  form.field4=$("#numeric-input").val();
+  form.field5=$("#cbox-input1").prop("checked");
+  form.field6=$("cbox-input2").prop("checked");
+  form.field7=$("#color-input").val();
+  form.field8=$("#markerName").val();
+  form.field9=$("#LATT").val();
+  form.field10=$("#LONG").val();
+  form.field11=$("#markerColor").val();
+  console.log(form);
+
+//TASK 4: Enable User Interaction with Form
+  $('#text-input1').prop('disabled', false);
+  $('#text-input2').prop('disabled', false);
+  $('#text-input3').prop('disabled', false);
+  $('#numeric-input').prop('disabled', false);
+  $('#cbox-input1').prop('disabled', false);
+  $('#cbox-input2').prop('disabled', false);
+  $('#color-input').prop('disabled', false);
+  $("#markerName").prop('disabled', false);
+  $("#LATT").prop('disabled', false);
+  $("#LONG").prop('disabled', false);
+  $("#markerColor").prop('disabled', false);
+
+  //FORM DOES NOT LOG?
+
+//  Task 5: Add a button trigger to log this form's object to console
+
+$("body > div.sidebar > button").click(function(e) {
+  console.log("printing",[$("#LATT").val(), $("#LONG").val()]);
+  console.log($("#markerColor").val());
+  var NLAT =$("#LATT").val();
+  var NLONG =$("#LONG").val();
+  var marker = L.circleMarker([NLAT, NLONG], {color: $("#markerColor").val()}).addTo(map).bindPopup($("#markerName").val());
+
+});
+// marker.bindPopup($("#markerName").val());
+// marker({color:$("#markerColor").val()});
+
 });

@@ -6,12 +6,29 @@
     <link rel="stylesheet" href="css/leaflet.css" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
+
   <body>
     <!-- Sidebar -->
     <div class="sidebar">
-      <!-- =====================
-      Add elements in this space
-      ====================== -->
+    `<h1> Input Data Here </h1>
+      <label> URL </label>
+      <input id="URL" type="text">
+      <br>
+      <br>
+      <label> Lattitude </label>
+      <input id="LAT" type="number">
+        <p> For Bike Crash Data, enter "LAT" </p>
+        <p> For Solar Panel Data, enter "LAT" </p>
+      <br>
+      <br>
+      <label> Longitude </label>
+      <input id="LONG" type="number">
+      <p> For Bike Crash Data, enter "LNG" </p>
+      <p> For Solar Panel Data, enter "LONG_" </p>
+      <br>
+      <br>
+      <button> Submit </button>
+
     </div>
     <!-- Map -->
     <div id="map" class="map"></div>
